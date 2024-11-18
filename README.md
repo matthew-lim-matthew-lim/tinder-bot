@@ -13,6 +13,41 @@
     - Email or text me when a date is set up.
 - Machine learning to help increase odds of swiping right on my type 🥺.
 
+### IMPORTANT
+
+- You will need to comment out a line in the package: In `utils.py`, you will need to comment out `"recently_active": user["recently_active"],`. Don't worry if you can't find this line yourself, as running the program will cause this error to throw and will link you to the erroneous line that needs to be commented out.
+
+### Usage
+
+This program is intended to be left running for long times autonomously.
+
+To run the scripts autonomously, you can either:
+- Use a Cloud-based VM
+- Leave it running on your device, or a Raspberry Pi (and etc)
+
+If you are using a Cloud-based VM or plan to close your terminal, you will need to use something like `tmux`, which allows the process to continue in the background.
+
+Usage:
+
+- Start a new `tmux` session:
+```
+tmux new -s mysession
+```
+- Detach from the `tmux` session by pressing `Ctrl + B` followed by `D`.
+- Reattach to a `tmux` session:
+```
+tmux attach -t mysession
+```
+- View active `tmux` sessions:
+```
+tmux ls
+```
+- Delete your `tmux` session:
+```
+tmux kill-session -t my_session
+```
+
+
 ### Process
 
 I knew I didn't want to use a browser automation tool like selenium if I could avoid it because Tinder is known to have a lot of pop-ups (eg. showing offers for premium) and other distractions which are very difficult to deal with. These are avoided entirely if an API is used. 
