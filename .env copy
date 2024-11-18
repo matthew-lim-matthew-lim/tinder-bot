@@ -1,0 +1,6 @@
+EMAIL=leonardodicaprio@gmail.com
+# Phone number includes country code, but not the '+' symbol
+PHONE_NUMBER=61123456789
+
+# The x-auth-token is used to authenticate the user. Run login_retrieve_auth_token.py to get it
+AUTH_TOKEN=fb123124-hehexd-...
