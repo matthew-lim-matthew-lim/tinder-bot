@@ -13,6 +13,9 @@
     - Email or text me when a date is set up.
 - Machine learning to help increase odds of swiping right on my type 🥺.
 
+### TODO:
+- Write better documentation on the what the differences are between the programs.
+
 ### IMPORTANT
 
 - You will need to comment out a line in the package: In `utils.py`, you will need to comment out `"recently_active": user["recently_active"],`. Don't worry if you can't find this line yourself, as running the program will cause this error to throw and will link you to the erroneous line that needs to be commented out.
@@ -47,6 +50,12 @@ tmux ls
 tmux kill-session -t my_session
 ```
 
+### Automatic Email Notification System
+
+You need to create an 'app password', which is a password that can be used for programmatic emailing.
+`https://myaccount.google.com/apppasswords`
+
+I would recommend you use a burner email to use to send the emails for better security (eg. even more safety when running the program on cloud services rather than using your personal email). Of course, there is no security risk to having the emails be sent to your personal account.
 
 ### Process
 
