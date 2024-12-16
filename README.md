@@ -64,3 +64,11 @@ I knew I didn't want to use a browser automation tool like selenium if I could a
 Looking for a working API was quite difficult because most of them are outdated, and Tinder keeps changing the API (eg. Using `protobuff` insteam of `json`). 
 
 After finding a working API, it should be smooth sailing.
+
+### Notes from later
+
+Need to make usage like relaunching easier through smoother processes. When the `x-auth-token` expires, this requires the bot to be reset with the 
+new `x-auth-token`. Catching an expired `x-auth-token` and relaunching should be smoother. I think fully automating the `x-auth-token` regeneration 
+process is a bit difficult though. 
+
+The documentation on Tinder api endpoints (eg. `https://api.gotinder.com/v2/auth/login/facebook`) isn't very good. Theoretically, automated login without SMS should be possible with Facebook because doing it this way is an automated way to retrieve the `x-auth-token`. At the moment it is quite hard due to the little documentation and the endpoints being constantly updated. From what I could gather, the `https://api.gotinder.com/v2/auth/login/facebook` endpoint takes a `token` and `facebook_id`. The `token` is retrieved from a facebook auth endpoint (I am not sure what the endpoint URL should be). The `facebook_id` is retrieved from something like `"https://graph.facebook.com/me?access_token=" + {access_token}` where `access_token` is the same as `token` that was supposed to be retrieved earlier.
