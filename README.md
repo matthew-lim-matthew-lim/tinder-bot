@@ -72,3 +72,5 @@ new `x-auth-token`. Catching an expired `x-auth-token` and relaunching should be
 process is a bit difficult though. 
 
 The documentation on Tinder api endpoints (eg. `https://api.gotinder.com/v2/auth/login/facebook`) isn't very good. Theoretically, automated login without SMS should be possible with Facebook because doing it this way is an automated way to retrieve the `x-auth-token`. At the moment it is quite hard due to the little documentation and the endpoints being constantly updated. From what I could gather, the `https://api.gotinder.com/v2/auth/login/facebook` endpoint takes a `token` and `facebook_id`. The `token` is retrieved from a facebook auth endpoint (I am not sure what the endpoint URL should be). The `facebook_id` is retrieved from something like `"https://graph.facebook.com/me?access_token=" + {access_token}` where `access_token` is the same as `token` that was supposed to be retrieved earlier.
+
+I tried to find where the `x-auth-token` is stored in responses. Maybe a way to do it would be to log in via selenium, retrieve the `x-auth-token`, and then just use the APIs from there? It is probably harder than it sounds though.
