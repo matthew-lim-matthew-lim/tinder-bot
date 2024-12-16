@@ -19,17 +19,18 @@ reciever_email_address = os.getenv('EMAIL_RECIEVER_ADDRESS')
 emails_sent = 0
 likes_sent = 0
 passes_sent = 0
+matches_count = 0
 
-def send_email(matches_count):
+def send_email_stats_update(argument="TinderBot 100 Likes Update"):
     # Declare as global to modify the variables
-    global emails_sent, likes_sent, passes_sent
+    global emails_sent, likes_sent, passes_sent, matches_count
 
     emails_sent += 1
 
     msg = MIMEMultipart()
     msg['From'] = sender_email_address
     msg['To'] = reciever_email_address
-    msg['Subject'] = (f"TinderBot 100 Likes Update #{emails_sent}. "
+    msg['Subject'] = (f"{argument} #{emails_sent}. "
                     f"Likes: {likes_sent}, Passes: {passes_sent}, Matches: {matches_count}")
     body = "This is an email update from TinderBot. "
 
@@ -79,6 +80,8 @@ def swipe_session():
 
 hrs_between_swipes = int(input("How many hours between swipes? "))
 
+send_email_stats_update(argument="TinderBot Started")
+
 while True:
     # Chance to skip today
     if random.random() < 0.1:
@@ -93,7 +96,7 @@ while True:
 
     # Send an email every 50 likes sent
     if (emails_sent == 0 or likes_sent % 50 == 0):
-        send_email(matches_count)
+        send_email_stats_update(matches_count)
     
     print(f"TinderBot Update. Emails Sent: {emails_sent}, "
           f"Likes: {likes_sent}, Passes: {passes_sent}, Matches: {matches_count}")
